@@ -25,6 +25,18 @@ public class ControllerDeAlunos {
         return listaAluno;
     }
 
+    @GetMapping("/{matricula}")
+    public ResponseEntity<ModelAluno> buscar(@PathVariable UUID matricula) {
+        Optional<ModelAluno> alunoBusca = repositoryUniversidade.findById(matricula);
+        if (alunoBusca.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(alunoBusca.get());
+
+    }
+
     @PostMapping
     public ResponseEntity<ModelAluno> cadastrar(@RequestBody ModelAluno aluno) {
 
