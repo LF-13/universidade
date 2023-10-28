@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "43fdb430-7e3a-4e75-8655-5d69d633a1e4",
+		"name": "Universidade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25548834"
+	},
+	"item": [
+		{
+			"name": "listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/universidade",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"universidade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verificar os dados recebidos\", () => {\r",
+							"\tpm.expect(pm.response.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/universidade/308147ef-3cc8-4d74-90bb-48389ccef47",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"universidade",
+						"308147ef-3cc8-4d74-90bb-48389ccef47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "matricular",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Larissa da silva fernandes\",\r\n    \"email\" : \"larissinha@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/universidade",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"universidade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/universidade/cdc604a8-e89c-451b-9607-f0c3aeca390e",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"universidade",
+						"cdc604a8-e89c-451b-9607-f0c3aeca390e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/universidade/eb284df8-1613-4683-bdd9-4b35020e6dc3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"universidade",
+						"eb284df8-1613-4683-bdd9-4b35020e6dc3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
